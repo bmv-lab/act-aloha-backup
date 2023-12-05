@@ -1,0 +1,5 @@
+train:
+python3 training_bc.py --task_name Scoop_Rice --ckpt_dir checkpoint_scoop_3 --policy_class ACT --kl_weight 10 --chunk_size 80 --hidden_dim 512 --batch_size 16 --dim_feedforward 3200 --num_epochs 2000 --lr 1e-5 --seed 0 --lr_backbone 1e-5 --state_dim 6 --backbone resnet18
+
+test:
+python3 test_bc_v3.py --task_name Scoop_Rice --ckpt_dir checkpoint_scoop_2 --policy_class ACT --kl_weight 10 --chunk_size 70 --hidden_dim 512 --batch_size 16 --dim_feedforward 3200 --num_epochs 2000 --lr 1e-5 --seed 0 --lr_backbone 1e-5 --state_dim 6 --backbone resnet18 --temporal_agg --eval
